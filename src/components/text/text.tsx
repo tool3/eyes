@@ -23,7 +23,7 @@ export default function TextComponent({}) {
     {
       text: { value: 'BY TAL HAYUT' },
       color: '#ffffff',
-      pos: { value: new Vector2(0, y), step: 0.3, max: 4, min: -4 } as any
+      pos: { value: new Vector2(0, y), step: 0.1, max: 4, min: -4 } as any
     },
     { order: 4 }
   )
