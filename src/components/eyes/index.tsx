@@ -1,7 +1,7 @@
 import { useControls } from 'leva'
 import Eye from './eye'
 import RedEye from './red-eye'
-import { Suzanne } from './eye'
+import Suzanne from './suzzane'
 import Vader from './vader'
 import Skull from './skull'
 
