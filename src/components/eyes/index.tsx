@@ -1,12 +1,10 @@
 import { useControls } from 'leva'
 import Eye from './eye'
 import RedEye from './red-eye'
+import Skull from './skull'
+import SuspenseLoader from './suspense-loader'
 import Suzanne from './suzzane'
 import Vader from './vader'
-import Skull from './skull'
-import { Html } from '@react-three/drei'
-import { Suspense } from 'react'
-import SuspenseLoader from './suspense-loader'
 
 export default function Eyes({ ...props }) {
   const { model } = useControls({

@@ -1,6 +1,6 @@
 import { useLoader } from '@react-three/fiber'
 import { useControls } from 'leva'
-import { MeshBasicMaterial, MeshMatcapMaterial, MeshStandardMaterial, TextureLoader } from 'three'
+import { MeshMatcapMaterial, MeshStandardMaterial, TextureLoader } from 'three'
 
 const options = Array.from(
   { length: 61 },

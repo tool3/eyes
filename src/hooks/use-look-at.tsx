@@ -1,5 +1,4 @@
 import { useFrame } from '@react-three/fiber'
-import { Ref } from 'react'
 
 export default function useLookAt(ref: any) {
   useFrame(({ pointer, viewport }) => {
