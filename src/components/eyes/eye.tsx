@@ -1,12 +1,11 @@
+/* eslint-disable react/no-unknown-property */
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
 
-
 export default function Eye(props) {
   const { nodes, materials } = useGLTF('/models/eye.glb') as any
   const instancedMeshRef = useRef() as any
-  
 
   useFrame(({ mouse, viewport }) => {
     const x = (mouse.x * viewport.width) / 2.5

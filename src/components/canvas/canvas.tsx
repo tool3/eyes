@@ -1,12 +1,12 @@
+/* eslint-disable react/no-unknown-property */
 import { Html, OrbitControls, Stats, useProgress } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
+import clsx from 'clsx'
 import { Leva, useControls } from 'leva'
 import { Perf } from 'r3f-perf'
 import { Suspense, useState } from 'react'
 import Debug from '../debug/debug'
 import s from './canvas.module.scss'
-import Image from 'next/image'
-import clsx from 'clsx'
 
 function Loader() {
   const { progress } = useProgress()
@@ -27,7 +27,7 @@ function Loader() {
       className={clsx(s.overlay, progress === 100 && s.loaded)}
     >
       <div className={s.title}>
-        <Image
+        {/* <Image
           src="/images/followers.svg"
           priority
           quality={100}
@@ -36,7 +36,8 @@ function Loader() {
           sizes="100vw"
           alt="followers"
           className={s.image}
-        />
+        /> */}
+        FOLLOWERS
         <div className={s.loading}>{progress.toFixed(2)} % loaded</div>
       </div>
     </Html>

@@ -1,8 +1,11 @@
+/* eslint-disable react/no-unknown-property */
 import { Center, useGLTF } from '@react-three/drei'
 import { useRef } from 'react'
 import { MeshStandardMaterial } from 'three'
+
 import useLookAt from '~/hooks/use-look-at'
 import useMatcaps from '~/hooks/use-matcaps'
+
 import SuspenseLoader from './suspense-loader'
 
 export default function Vader(props) {
@@ -26,7 +29,7 @@ export default function Vader(props) {
     <SuspenseLoader>
       <instancedMesh ref={instancedMeshRef} {...props} dispose={null}>
         <Center>
-          <group scale={0.2} rotation={[-2.17, 0.002, -1.429]}>
+          <group scale={[0.25, 0.25, 0.2]} rotation={[-2.17, 0.002, -1.429]}>
             <mesh
               castShadow
               receiveShadow

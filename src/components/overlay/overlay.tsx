@@ -1,8 +1,10 @@
-import { useDeviceDetect } from '~/hooks/use-device-detect'
-import s from './overlay.module.scss'
-import Draggable from 'react-draggable'
-import { useControls } from 'leva'
 import clsx from 'clsx'
+import { useControls } from 'leva'
+import Draggable from 'react-draggable'
+
+import { useDeviceDetect } from '~/hooks/use-device-detect'
+
+import s from './overlay.module.scss'
 
 export default function Overlay() {
   const { isMobile } = useDeviceDetect()
@@ -20,7 +22,7 @@ export default function Overlay() {
             <div className={s.mobile}>3 finger tap for controls</div>
           ) : (
             <div className={s.desktop}>
-              <kbd>shift</kbd>
+              <kbd>option</kbd>
               <kbd>d</kbd>
               <div>for controls</div>
             </div>
