@@ -2,7 +2,7 @@
 
 Eye follow you   
 
-written with the great @pmndrs' family.
+written with the great [@pmndrs'](https://github.com/pmndrs) family.
 
 ![](/src/app/opengraph-image.png)   
 

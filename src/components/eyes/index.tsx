@@ -1,6 +1,9 @@
 import { useControls } from 'leva'
 import Eye from './eye'
 import RedEye from './red-eye'
+import { Suzanne } from './eye'
+import Vader from './vader'
+import Skull from './skull'
 
 export default function Eyes({ ...props }) {
   const { model } = useControls({
@@ -8,12 +11,30 @@ export default function Eyes({ ...props }) {
       value: 'redEye',
       options: {
         eye: 'eye',
-        redEye: 'redEye'
+        redEye: 'redEye',
+        suzzane: 'suzzane',
+        vader: 'vader',
+        skull: 'skull'
       }
     }
   })
 
-  const Model = model === 'eye' ? Eye : RedEye
+  function getModel(model: string) {
+    switch (model) {
+      case 'eye':
+        return Eye
+      case 'redEye':
+        return RedEye
+      case 'suzzane':
+        return Suzanne
+      case 'vader':
+        return Vader
+      case 'skull':
+        return Skull
+    }
+  }
+
+  const Model = getModel(model);
   const scale = model === 'eye' ? 0.3 : 0.6
 
   return (

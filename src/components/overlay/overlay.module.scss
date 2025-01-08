@@ -9,7 +9,7 @@
     cursor: grab;
 
     border: 1px solid white;
-    border-radius: 15px;
+    border-radius: 10px;
     user-select: none;
 
     .desktop {
@@ -24,4 +24,17 @@
             border-radius: 5px;
         }
     }
+
+}
+
+.dragging {
+    cursor: grabbing;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
 }

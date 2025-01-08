@@ -50,12 +50,18 @@ function FPS({ fps }: { fps: boolean }) {
 export default function CanvasWrapper({ children }) {
   const [active, setActive] = useState(false)
 
-  const { fps, perf, background } = useControls({
-    fps: { value: false, color: 'red' },
-    perf: false,
-    background: 'black'
-  })
+  const { fps, perf } = useControls(
+    'Monitor',
+    {
+      fps: { value: false, color: 'red' },
+      perf: false
+    },
+    { order: 5, collapsed: true }
+  )
 
+  const { background } = useControls({
+    background: { value: 'black', order: 1 }
+  })
 
   return (
     <>
@@ -76,7 +82,7 @@ export default function CanvasWrapper({ children }) {
         {perf ? <Perf position="top-left" /> : null}
         {/* <Loader /> */}
         <Suspense fallback={<Loader />}>{children}</Suspense>
-        <OrbitControls enabled={false} /> 
+        <OrbitControls enabled={false} />
       </Canvas>
     </>
   )

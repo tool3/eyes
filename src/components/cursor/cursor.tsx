@@ -10,28 +10,32 @@ export default function CursorLight() {
     ref.current.position.set(x, y, 1)
   })
 
-  const { light, distance, intensity } = useControls('Cursor Light', {
-    light: {
-      value: '#ffffff'
+  const { light, distance, intensity } = useControls(
+    'Cursor Light',
+    {
+      light: {
+        value: '#ffffff'
+      },
+      distance: {
+        value: 3,
+        min: 0.1,
+        max: 30,
+        step: 0.1
+      },
+      intensity: {
+        value: 5.5,
+        min: 0,
+        max: 100,
+        step: 0.1
+      }
     },
-    distance: {
-      value: 3,
-      min: 0.1,
-      max: 30,
-      step: 0.001
-    },
-    intensity: {
-      value: 1.5,
-      min: 0,
-      max: 20,
-      step: 0.01
-    }
-  })
+    { order: 3 }
+  )
 
   return (
     <mesh ref={ref}>
       <sphereGeometry args={[0.1, 32, 32]} />
-      <meshStandardMaterial emissive={light} emissiveIntensity={5} />
+      <meshStandardMaterial emissive={light} emissiveIntensity={1} />
       <pointLight distance={distance} intensity={intensity} color={light} />
     </mesh>
   )
