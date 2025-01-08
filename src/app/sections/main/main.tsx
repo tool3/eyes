@@ -5,6 +5,7 @@ import CursorLight from '~/components/cursor/cursor'
 import Eyes from '~/components/eyes'
 import s from './main.module.scss'
 import TextComponent from '~/components/text/text'
+import Overlay from '~/components/overlay/overlay'
 
 export default function Main() {
   return (
@@ -14,6 +15,7 @@ export default function Main() {
         <TextComponent />
         <CursorLight />
       </CanvasWrapper>
+      <Overlay />
     </div>
   )
 }

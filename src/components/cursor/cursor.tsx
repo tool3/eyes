@@ -16,8 +16,8 @@ export default function CursorLight() {
     },
     distance: {
       value: 3,
-      min: 0,
-      max: 50,
+      min: 0.1,
+      max: 30,
       step: 0.001
     },
     intensity: {
@@ -31,7 +31,7 @@ export default function CursorLight() {
   return (
     <mesh ref={ref}>
       <sphereGeometry args={[0.1, 32, 32]} />
-      <meshStandardMaterial emissive={'#ffffff'} emissiveIntensity={1} />
+      <meshStandardMaterial emissive={light} emissiveIntensity={5} />
       <pointLight distance={distance} intensity={intensity} color={light} />
     </mesh>
   )

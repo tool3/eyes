@@ -1,0 +1,27 @@
+.overlay {
+    margin: 10px;
+    position: absolute;
+    top: 0;
+    padding: 1rem;
+    font-family: 'GeistMono';
+    font-size: 11px;
+    backdrop-filter: blur(10px);
+    cursor: grab;
+
+    border: 1px solid white;
+    border-radius: 15px;
+    user-select: none;
+
+    .desktop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
+
+        kbd {
+            border: 1px solid white;
+            padding: 2px 5px;
+            border-radius: 5px;
+        }
+    }
+}

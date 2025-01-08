@@ -12,11 +12,11 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-body' })
 
 export const metadata: Metadata = {
   title: {
-    default: 'matcaps | Tal Hayut',
+    default: 'Followers | Tal Hayut',
     template: '%s | Tal Hayut'
   },
   metadataBase: siteURL,
-  description: `Exploring matcaps textures with threejs`,
+  description: `Eye follow you`,
   icons: [
     {
       rel: 'apple-touch-icon',
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   manifest: '/manifest.webmanifest',
   twitter: {
     card: 'summary_large_image',
-    title: 'Matcaps | Tal Hayut',
+    title: 'Followers | Tal Hayut',
     creator: 'talhayut',
-    siteId: 'matcaps'
+    siteId: 'followers'
   }
 }
 
