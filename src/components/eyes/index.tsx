@@ -4,6 +4,9 @@ import RedEye from './red-eye'
 import Suzanne from './suzzane'
 import Vader from './vader'
 import Skull from './skull'
+import { Html } from '@react-three/drei'
+import { Suspense } from 'react'
+import SuspenseLoader from './suspense-loader'
 
 export default function Eyes({ ...props }) {
   const { model } = useControls({
@@ -34,21 +37,23 @@ export default function Eyes({ ...props }) {
     }
   }
 
-  const Model = getModel(model);
+  const Model = getModel(model)
   const scale = model === 'eye' ? 0.3 : 0.6
 
   return (
-    <group {...props}>
-      {[...Array(5).keys()].map((i) => (
-        <group key={i * 6}>
-          <Model scale={scale} position={[-5, -3 + i * 1.5, 0]} />
-          <Model scale={scale} position={[-3, -3 + i * 1.5, 0]} />
-          <Model scale={scale} position={[-1, -3 + i * 1.5, 0]} />
-          <Model scale={scale} position={[1, -3 + i * 1.5, 0]} />
-          <Model scale={scale} position={[3, -3 + i * 1.5, 0]} />
-          <Model scale={scale} position={[5, -3 + i * 1.5, 0]} />
-        </group>
-      ))}
-    </group>
+    <SuspenseLoader text="Loading Model">
+      <group {...props}>
+        {[...Array(5).keys()].map((i) => (
+          <group key={i * 6}>
+            <Model scale={scale} position={[-5, -3 + i * 1.5, 0]} />
+            <Model scale={scale} position={[-3, -3 + i * 1.5, 0]} />
+            <Model scale={scale} position={[-1, -3 + i * 1.5, 0]} />
+            <Model scale={scale} position={[1, -3 + i * 1.5, 0]} />
+            <Model scale={scale} position={[3, -3 + i * 1.5, 0]} />
+            <Model scale={scale} position={[5, -3 + i * 1.5, 0]} />
+          </group>
+        ))}
+      </group>
+    </SuspenseLoader>
   )
 }

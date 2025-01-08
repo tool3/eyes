@@ -1,30 +1,18 @@
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { useEffect, useRef } from 'react'
-import { Object3D } from 'three'
+import { useRef } from 'react'
 
 
 export default function Eye(props) {
   const { nodes, materials } = useGLTF('/models/eye.glb') as any
   const instancedMeshRef = useRef() as any
-  const count = props.count || 30
-  const temp = props.temp || new Object3D()
+  
 
   useFrame(({ mouse, viewport }) => {
     const x = (mouse.x * viewport.width) / 2.5
     const y = (mouse.y * viewport.height) / 2.5
     instancedMeshRef.current.lookAt(x, y, 1)
   })
-
-  useEffect(() => {
-    for (let i = 0; i < count; i++) {
-      temp.position.set(Math.random(), Math.random(), Math.random())
-      temp.updateMatrix()
-      instancedMeshRef.current.setMatrixAt(i, temp.matrix)
-    }
-
-    instancedMeshRef.current.instanceMatrix.needsUpdate = true
-  }, [])
 
   return (
     <instancedMesh ref={instancedMeshRef} {...props}>
