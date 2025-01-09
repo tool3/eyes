@@ -7,6 +7,7 @@ import Skull from './skull'
 import SuspenseLoader from './suspense-loader'
 import Suzanne from './suzanne'
 import Vader from './vader'
+import Deadpool from './deadpool'
 
 export default function Eyes({ ...props }) {
   const { model } = useControls({
@@ -18,7 +19,8 @@ export default function Eyes({ ...props }) {
         suzanne: 'suzanne',
         vader: 'vader',
         skull: 'skull',
-        ironman: 'ironman'
+        ironman: 'ironman',
+        deadpool: 'deadpool'
       }
     }
   })
@@ -37,6 +39,8 @@ export default function Eyes({ ...props }) {
         return Skull
       case 'ironman':
         return IronMan
+      case 'deadpool':
+        return Deadpool
     }
   }
 

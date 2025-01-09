@@ -29,7 +29,7 @@ export default function Vader(props) {
     <SuspenseLoader>
       <instancedMesh ref={instancedMeshRef} {...props} dispose={null}>
         <Center>
-          <group scale={[0.25, 0.25, 0.2]} rotation={[-2.17, 0.002, -1.429]}>
+          <group scale={[0.3, 0.3, 0.2]} rotation={[-2.17, 0.002, -1.429]}>
             <mesh
               castShadow
               receiveShadow
