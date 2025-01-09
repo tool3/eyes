@@ -1,12 +1,12 @@
 import { useControls } from 'leva'
 
 import Eye from './eye'
+import IronMan from './ironman'
 import RedEye from './red-eye'
 import Skull from './skull'
 import SuspenseLoader from './suspense-loader'
-import Suzanne from './suzzane'
+import Suzanne from './suzanne'
 import Vader from './vader'
-import IronMan from './ironman'
 
 export default function Eyes({ ...props }) {
   const { model } = useControls({
@@ -15,7 +15,7 @@ export default function Eyes({ ...props }) {
       options: {
         eye: 'eye',
         redEye: 'redEye',
-        suzzane: 'suzzane',
+        suzanne: 'suzanne',
         vader: 'vader',
         skull: 'skull',
         ironman: 'ironman'
@@ -29,7 +29,7 @@ export default function Eyes({ ...props }) {
         return Eye
       case 'redEye':
         return RedEye
-      case 'suzzane':
+      case 'suzanne':
         return Suzanne
       case 'vader':
         return Vader
