@@ -25,8 +25,11 @@
     }
 
     .loading {
-        margin-top: -1rem;
         font-size: 1rem;
-        // font-family: 'DelaGothicOne';
+    }
+
+    @media screen and (width <= 800px) {
+        font-size: 2rem;
+
     }
 }
