@@ -1,5 +1,6 @@
 import { useControls } from 'leva'
 
+import Deadpool from './deadpool'
 import Eye from './eye'
 import IronMan from './ironman'
 import RedEye from './red-eye'
@@ -7,9 +8,8 @@ import Skull from './skull'
 import SuspenseLoader from './suspense-loader'
 import Suzanne from './suzanne'
 import Vader from './vader'
-import Deadpool from './deadpool'
 
-export default function Eyes({ ...props }) {
+export default function Models({ ...props }) {
   const { model } = useControls({
     model: {
       value: 'redEye',

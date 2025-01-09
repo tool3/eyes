@@ -2,7 +2,7 @@
 
 import CanvasWrapper from '~/components/canvas/canvas'
 import CursorLight from '~/components/cursor/cursor'
-import Eyes from '~/components/eyes'
+import Models from '~/components/models'
 import Overlay from '~/components/overlay/overlay'
 import TextComponent from '~/components/text/text'
 
@@ -12,7 +12,7 @@ export default function Main() {
   return (
     <div className={s.canvas}>
       <CanvasWrapper>
-        <Eyes />
+        <Models />
         <TextComponent />
         <CursorLight />
       </CanvasWrapper>

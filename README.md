@@ -6,7 +6,6 @@ written with the great [@pmndrs'](https://github.com/pmndrs) family.
 based on an enhanced [the amazing @bmnt template](https://github.com/basementstudio/next-typescript).
 
 
-
 Red Eye 3D model by DEGUIDER   
 https://sketchfab.com/3d-models/human-eye-b68ae822b45443edb812950993ece362
 
