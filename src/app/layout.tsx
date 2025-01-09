@@ -12,11 +12,11 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-body' })
 
 export const metadata: Metadata = {
   title: {
-    default: 'Followers | Tal Hayut',
+    default: 'Followall | Tal Hayut',
     template: '%s | Tal Hayut'
   },
   metadataBase: siteURL,
-  description: `Eye follow you`,
+  description: `a wall of followers`,
   icons: [
     {
       rel: 'apple-touch-icon',
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   manifest: '/manifest.webmanifest',
   twitter: {
     card: 'summary_large_image',
-    title: 'Followers | Tal Hayut',
+    title: 'Followall',
     creator: 'talhayut',
-    siteId: 'followers'
+    siteId: 'followall'
   }
 }
 
