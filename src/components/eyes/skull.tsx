@@ -13,7 +13,7 @@ export default function Skull(props) {
   const instancedMeshRef = useRef() as any
 
   useLookAt(instancedMeshRef)
-  const material = useMatcaps({ name: 'Skull', defaultMatcap: 'matcap_61.png' })
+  const material = useMatcaps({ name: 'Skull' })
 
   return (
     <SuspenseLoader>

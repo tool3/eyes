@@ -11,10 +11,8 @@ const Debug = ({ set }) => {
       const isDebug = window.location.hash === hash
       if (isDebug) {
         window.location.hash = ''
-        dispatchEvent(new Event('debugClose'))
         set(false)
       } else {
-        dispatchEvent(new Event('debug'))
         set(true)
         window.location.hash = hash
       }

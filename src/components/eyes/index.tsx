@@ -6,6 +6,7 @@ import Skull from './skull'
 import SuspenseLoader from './suspense-loader'
 import Suzanne from './suzzane'
 import Vader from './vader'
+import IronMan from './ironman'
 
 export default function Eyes({ ...props }) {
   const { model } = useControls({
@@ -16,7 +17,8 @@ export default function Eyes({ ...props }) {
         redEye: 'redEye',
         suzzane: 'suzzane',
         vader: 'vader',
-        skull: 'skull'
+        skull: 'skull',
+        ironman: 'ironman'
       }
     }
   })
@@ -33,6 +35,8 @@ export default function Eyes({ ...props }) {
         return Vader
       case 'skull':
         return Skull
+      case 'ironman':
+        return IronMan
     }
   }
 

@@ -5,6 +5,7 @@ import clsx from 'clsx'
 import { Leva, useControls } from 'leva'
 import { Perf } from 'r3f-perf'
 import { Suspense, useState } from 'react'
+
 import Debug from '../debug/debug'
 import s from './canvas.module.scss'
 
@@ -37,7 +38,7 @@ function Loader() {
           alt="followers"
           className={s.image}
         /> */}
-        FOLLOWERS
+        FOLLOWALL
         <div className={s.loading}>{progress.toFixed(2)} % loaded</div>
       </div>
     </Html>

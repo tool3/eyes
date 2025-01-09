@@ -14,7 +14,7 @@ export default function Suzanne(props) {
   useLookAt(instancedMeshRef)
   const material = useMatcaps({
     name: 'Suzzane',
-    defaultMatcap: 'matcap_18.png'
+    defaultMatcap: 'matcap_61.png'
   })
 
   return (

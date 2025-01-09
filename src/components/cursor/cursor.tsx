@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { useFrame } from '@react-three/fiber'
 import { useControls } from 'leva'
 import { useRef } from 'react'
@@ -25,7 +26,7 @@ export default function CursorLight() {
       intensity: {
         value: 5.5,
         min: 0,
-        max: 100,
+        max: 200,
         step: 0.1
       }
     },
