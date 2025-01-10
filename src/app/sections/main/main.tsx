@@ -4,6 +4,7 @@ import CanvasWrapper from '~/components/canvas/canvas'
 import CursorLight from '~/components/cursor/cursor'
 import Models from '~/components/models'
 import Overlay from '~/components/overlay/overlay'
+import Shortcuts from '~/components/shortcuts/shortcuts'
 import TextComponent from '~/components/text/text'
 
 import s from './main.module.scss'
@@ -17,6 +18,7 @@ export default function Main() {
         <CursorLight />
       </CanvasWrapper>
       <Overlay />
+      <Shortcuts />
     </div>
   )
 }

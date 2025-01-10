@@ -7,9 +7,10 @@ import { useDeviceDetect } from '~/hooks/use-device-detect'
 import s from './overlay.module.scss'
 
 export default function Overlay() {
-  const { isMobile } = useDeviceDetect()
+  const { isMobile, isMacOs } = useDeviceDetect()
 
   const { hint } = useControls({ hint: { value: true, order: 0 } })
+  const mainKey = isMacOs ? 'option' : 'alt'
 
   return (
     <Draggable
@@ -22,7 +23,7 @@ export default function Overlay() {
             <div className={s.mobile}>3 finger tap for controls</div>
           ) : (
             <div className={s.desktop}>
-              <kbd>option</kbd>
+              <kbd>{mainKey}</kbd>
               <kbd>d</kbd>
               <div>for controls</div>
             </div>
