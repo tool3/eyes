@@ -14,17 +14,22 @@ export default function useShortCuts() {
     incDistance,
     decDistance,
     cycleModel,
+    lockAxis,
     setHint
   } = useAppStore()
 
   const [open, setOpen] = useState(false)
 
+  // LOCKED MODE AND THATS IT
+
   function keyDown(e: KeyboardEvent) {
-    if (e.code === 'KeyI' && e.altKey) incIntensity(0.5)
-    if (e.code === 'KeyJ' && e.altKey) decIntensity(0.5)
+    if (e.code === 'KeyI' && e.altKey) incIntensity(5)
+    if (e.code === 'KeyJ' && e.altKey) decIntensity(5)
     if (e.code === 'KeyM' && e.altKey) cycleModel()
-    if (e.code === 'KeyY' && e.altKey) incDistance(0.5)
-    if (e.code === 'KeyG' && e.altKey) decDistance(0.5)
+    if (e.code === 'KeyG' && e.altKey) incDistance(0.5)
+    if (e.code === 'KeyV' && e.altKey) decDistance(0.5)
+    if (e.code === 'KeyY' && e.altKey) lockAxis('y')
+    if (e.code === 'KeyX' && e.altKey) lockAxis('x')
     if (e.code === 'KeyS' && e.altKey) setOpen((o) => !o)
     if (e.code === 'KeyH' && e.altKey) setHint()
   }
@@ -41,6 +46,8 @@ export default function useShortCuts() {
       { key: 'j', description: 'decrease intensity' },
       { key: 'y', description: 'increase distance' },
       { key: 'g', description: 'decrease distance' },
+      { key: 'x', description: 'lock axis x' },
+      { key: 'y', description: 'lock axis y' },
       { key: 'm', description: 'cycle models' },
       { key: 's', description: 'show shortcuts' },
       { key: 'h', description: 'show hint' }

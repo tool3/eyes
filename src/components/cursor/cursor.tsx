@@ -7,12 +7,14 @@ import { useAppStore } from '~/context/use-app-store'
 
 export default function CursorLight() {
   const ref = useRef() as any
-  const { intensity, setIntensity, distance, setDistance } = useAppStore()
+  const sphereRef = useRef() as any
+  const { intensity, setIntensity, distance, setDistance, depth, setDepth } =
+    useAppStore()
 
   useFrame(({ pointer, viewport }) => {
     const x = (pointer.x * viewport.width) / 2.5
     const y = (pointer.y * viewport.height) / 2.5
-    ref.current.position.set(x, y, 1)
+    ref.current.position.set(x, y, depth)
   })
 
   const { light, sphere } = useControls(
@@ -20,6 +22,13 @@ export default function CursorLight() {
     {
       light: {
         value: '#ffffff'
+      },
+      depth: {
+        value: 1,
+        min: 1,
+        max: 3,
+        step: 0.1,
+        onChange: setDepth
       },
       distance: {
         value: distance,
@@ -44,7 +53,7 @@ export default function CursorLight() {
 
   return (
     <mesh ref={ref}>
-      <sphereGeometry args={[0.1, 32, 32]} />
+      <sphereGeometry ref={sphereRef} args={[0.1, 32, 32]} />
       <meshStandardMaterial
         emissive={light}
         emissiveIntensity={1}

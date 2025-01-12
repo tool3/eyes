@@ -1,7 +1,5 @@
 .container {
-    // width: 100%;
     position: absolute;
-    // left: 50%;
     bottom: 0%;
     transform: translateX(-50%);
     display: flex;
@@ -9,20 +7,22 @@
     justify-content: space-between;
     align-items: flex-start;
     gap: 5px;
-    border: 1px solid white;
-    border-radius: 15px;
     margin: 1rem;
     padding: 1rem;
     backdrop-filter: blur(10px);
     font-family: GeistMono;
     font-size: 11px;
-    transition: opacity .2s ease-in-out;
-    will-change: opacity;
+    transition: .2s ease-in-out;
+    will-change: opacity, visibility;
     cursor: grab;
+    box-shadow:  none;
+    border-radius: 15px;
+    mix-blend-mode: difference;
 }
 
 .open {
     visibility: visible;
+    box-shadow: 5px 5px 10px #393434, -3px -3px 10px #4d4646;
     opacity: 1;
 }
 

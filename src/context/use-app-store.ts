@@ -10,6 +10,9 @@ export interface AppStore {
   hint: boolean
   model: number
   models: string[]
+  axisLock: string
+  depth: number
+  setDepth: (depth: number) => void
   incIntensity: (intensity: number) => void
   decIntensity: (intensity: number) => void
   setIntensity: (intensity: number) => void
@@ -19,6 +22,7 @@ export interface AppStore {
   decDistance: (distance: number) => void
   setDistance: (distance: number) => void
   setHint: () => void
+  lockAxis: (axis: string) => void
 }
 
 export const useAppStore = create<AppStore>((set) => ({
@@ -27,6 +31,7 @@ export const useAppStore = create<AppStore>((set) => ({
   intensity: 1.5,
   distance: 3,
   model: 0,
+  axisLock: 'none',
   hint: false,
   models: [
     'redEye',
@@ -38,6 +43,8 @@ export const useAppStore = create<AppStore>((set) => ({
     'deadpool',
     'apollo'
   ],
+  depth: 1,
+  setDepth: (depth: number) => set(() => ({ depth })),
   incIntensity: (intensity: number) =>
     set((s) => ({ intensity: s.intensity + intensity })),
   decIntensity: (intensity: number) =>
@@ -54,5 +61,6 @@ export const useAppStore = create<AppStore>((set) => ({
   decDistance: (distance: number) =>
     set((s) => ({ distance: s.distance - distance })),
   setDistance: (distance: number) => set(() => ({ distance })),
-  setHint: () => set((s) => ({ hint: !s.hint }))
+  setHint: () => set((s) => ({ hint: !s.hint })),
+  lockAxis: (axis: string) => set((s) => ({ axisLock: s.axisLock === axis ? 'none' : axis }))
 }))

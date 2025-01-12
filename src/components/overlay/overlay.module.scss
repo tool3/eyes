@@ -8,10 +8,13 @@
     font-size: 11px;
     backdrop-filter: blur(10px);
     cursor: grab;
+    mix-blend-mode: difference;
 
-    border: 1px solid white;
     border-radius: 10px;
+    box-shadow:  none;
     user-select: none;
+    transition: .2s ease-in-out;
+    will-change: opacity, visibility;
 
     .desktopWrapper {
         display: flex;
@@ -42,8 +45,11 @@
 
 .hidden {
     visibility: hidden;
+    opacity: 0;
 }
 
 .visible {
     visibility: visible;
+    opacity: 1;
+    box-shadow: 5px 5px 10px #393434, -3px -3px 10px #4d4646;
 }
