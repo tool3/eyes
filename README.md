@@ -16,7 +16,7 @@ Darth Vader helmet model
 https://sketchfab.com/3d-models/darth-vader-helmet-7c49aaf5121643189a4ac40fdfd0a35b   
 
 Deadpool head model   
-https://sketchfab.com/3d-models/deep-pool-head-1d6cf7ece9c84e4098ef7e8e48be8c44
+https://sketchfab.com/3d-models/deep-pool-head-1d6cf7ece9c84e4098ef7e8e48be8c44   
 
 
 Apollo head model
