@@ -26,7 +26,7 @@ export default function CursorLight() {
       depth: {
         value: 1,
         min: 1,
-        max: 3,
+        max: 10,
         step: 0.1,
         onChange: setDepth
       },
