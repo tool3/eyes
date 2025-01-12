@@ -1,7 +1,8 @@
 .overlay {
-    margin: 10px;
     position: absolute;
+    gap: 5px;
     top: 0;
+    margin: 10px;
     padding: .5rem 1rem;
     font-family: 'GeistMono';
     font-size: 11px;
@@ -12,19 +13,26 @@
     border-radius: 10px;
     user-select: none;
 
-    .desktop {
+    .desktopWrapper {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column;
         gap: 5px;
 
-        kbd {
-            background: dimgrey;
-            box-shadow:  2px 2px 0 rgba(73, 80, 87, 0.8), inset -2px -2px 5px gray,;
-            padding: 2px 5px;
-            border-radius: 5px;
+        .desktop {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+    
+            kbd {
+                padding: 2px 5px;
+                border-radius: 4px;
+                background: #e0cdcd;
+                background: var(--button-background);
+                box-shadow: var(--button-box-shadow)
+            }
         }
     }
+
 
 }
 

@@ -7,24 +7,26 @@ import { useAppStore } from '~/context/use-app-store'
 
 export default function CursorLight() {
   const ref = useRef() as any
-  const { intensity, setIntensity } = useAppStore()
+  const { intensity, setIntensity, distance, setDistance } = useAppStore()
+
   useFrame(({ pointer, viewport }) => {
     const x = (pointer.x * viewport.width) / 2.5
     const y = (pointer.y * viewport.height) / 2.5
     ref.current.position.set(x, y, 1)
   })
 
-  const { light, distance, sphere } = useControls(
+  const { light, sphere } = useControls(
     'Cursor Light',
     {
       light: {
         value: '#ffffff'
       },
       distance: {
-        value: 3,
+        value: distance,
         min: 0.1,
         max: 30,
-        step: 0.1
+        step: 0.1,
+        onChange: setDistance
       },
       intensity: {
         value: intensity,

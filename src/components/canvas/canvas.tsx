@@ -28,16 +28,6 @@ function Loader() {
       className={clsx(s.overlay, progress === 100 && s.loaded)}
     >
       <div className={s.title}>
-        {/* <Image
-          src="/images/followers.svg"
-          priority
-          quality={100}
-          width={800}
-          height={800}
-          sizes="100vw"
-          alt="followers"
-          className={s.image}
-        /> */}
         FOLLOWALL
         <div className={s.loading}>{progress.toFixed(2)} % loaded</div>
       </div>
@@ -82,7 +72,6 @@ export default function CanvasWrapper({ children }) {
       >
         <color attach="background" args={[background]} />
         {perf ? <Perf position="top-left" /> : null}
-        {/* <Loader /> */}
         <Suspense fallback={<Loader />}>{children}</Suspense>
         <OrbitControls enabled={false} />
       </Canvas>

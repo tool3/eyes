@@ -1,17 +1,14 @@
 /* eslint-disable react/no-unknown-property */
 import { useGLTF } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
+
+import useLookAt from '~/hooks/use-look-at'
 
 export default function RedEye(props) {
   const { nodes, materials } = useGLTF('/models/red_eye.glb') as any
   const instancedMeshRef = useRef() as any
 
-  useFrame(({ mouse, viewport }) => {
-    const x = (mouse.x * viewport.width) / 2.5
-    const y = (mouse.y * viewport.height) / 2.5
-    instancedMeshRef.current.lookAt(x, y, 1)
-  })
+  useLookAt(instancedMeshRef)
 
   return (
     <instancedMesh ref={instancedMeshRef} {...props} dispose={null}>

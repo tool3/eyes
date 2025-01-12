@@ -8,7 +8,7 @@ export default function SuspenseLoader({
   return (
     <Suspense
       fallback={
-        <Html center style={{ zIndex: 0, width: '200px' }}>
+        <Html center style={{ zIndex: 0, width: 'max-content' }}>
           {text}
         </Html>
       }

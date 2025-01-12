@@ -2,6 +2,7 @@ import { useControls } from 'leva'
 
 import { useAppStore } from '~/context/use-app-store'
 
+import Apollo from './apollo'
 import Deadpool from './deadpool'
 import Eye from './eye'
 import IronMan from './ironman'
@@ -12,7 +13,23 @@ import Suzanne from './suzanne'
 import Vader from './vader'
 
 export default function Models({ ...props }) {
-  const { model, models, setModel } = useAppStore()
+  const { model, models, setModel } = useAppStore((s) => ({
+    model: s.model,
+    models: s.models,
+    setModel: s.setModel
+  }))
+
+  const modelComponents = {
+    eye: Eye,
+    redEye: RedEye,
+    suzanne: Suzanne,
+    vader: Vader,
+    skull: Skull,
+    ironman: IronMan,
+    deadpool: Deadpool,
+    apollo: Apollo
+  }
+
   useControls({
     model: {
       value: 'redEye',
@@ -23,32 +40,15 @@ export default function Models({ ...props }) {
         vader: 'vader',
         skull: 'skull',
         ironman: 'ironman',
-        deadpool: 'deadpool'
+        deadpool: 'deadpool',
+        apollo: 'apollo'
       },
       onChange: (val) => setModel(val)
     }
   })
 
-  function getModel(model: string) {
-    switch (model) {
-      case 'eye':
-        return Eye
-      case 'redEye':
-        return RedEye
-      case 'suzanne':
-        return Suzanne
-      case 'vader':
-        return Vader
-      case 'skull':
-        return Skull
-      case 'ironman':
-        return IronMan
-      case 'deadpool':
-        return Deadpool
-    }
-  }
   const modelString = models[model]
-  const Model = getModel(modelString)
+  const Model = modelComponents[modelString]
   const scale = modelString === 'eye' ? 0.3 : 0.6
 
   return (
