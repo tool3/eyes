@@ -1,5 +1,7 @@
 import { useControls } from 'leva'
 
+import { useAppStore } from '~/context/use-app-store'
+
 import Deadpool from './deadpool'
 import Eye from './eye'
 import IronMan from './ironman'
@@ -10,7 +12,8 @@ import Suzanne from './suzanne'
 import Vader from './vader'
 
 export default function Models({ ...props }) {
-  const { model } = useControls({
+  const { model, models, setModel } = useAppStore()
+  useControls({
     model: {
       value: 'redEye',
       options: {
@@ -21,7 +24,8 @@ export default function Models({ ...props }) {
         skull: 'skull',
         ironman: 'ironman',
         deadpool: 'deadpool'
-      }
+      },
+      onChange: (val) => setModel(val)
     }
   })
 
@@ -43,9 +47,9 @@ export default function Models({ ...props }) {
         return Deadpool
     }
   }
-
-  const Model = getModel(model)
-  const scale = model === 'eye' ? 0.3 : 0.6
+  const modelString = models[model]
+  const Model = getModel(modelString)
+  const scale = modelString === 'eye' ? 0.3 : 0.6
 
   return (
     <SuspenseLoader text="Loading Model">

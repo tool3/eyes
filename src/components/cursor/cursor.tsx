@@ -3,15 +3,18 @@ import { useFrame } from '@react-three/fiber'
 import { useControls } from 'leva'
 import { useRef } from 'react'
 
+import { useAppStore } from '~/context/use-app-store'
+
 export default function CursorLight() {
   const ref = useRef() as any
-  useFrame(({ mouse, viewport }) => {
-    const x = (mouse.x * viewport.width) / 2.5
-    const y = (mouse.y * viewport.height) / 2.5
+  const { intensity, setIntensity } = useAppStore()
+  useFrame(({ pointer, viewport }) => {
+    const x = (pointer.x * viewport.width) / 2.5
+    const y = (pointer.y * viewport.height) / 2.5
     ref.current.position.set(x, y, 1)
   })
 
-  const { light, distance, intensity, sphere } = useControls(
+  const { light, distance, sphere } = useControls(
     'Cursor Light',
     {
       light: {
@@ -24,10 +27,11 @@ export default function CursorLight() {
         step: 0.1
       },
       intensity: {
-        value: 5.5,
+        value: intensity,
         min: 0,
         max: 200,
-        step: 0.1
+        step: 0.1,
+        onChange: setIntensity
       },
       sphere: {
         value: true
