@@ -25,7 +25,7 @@ export default function Loader() {
       })
       tl.to(`.${s.letter}`, {
         duration: 1,
-        ease: 'sine.out',
+        ease: 'power1.out',
         stagger: {
           amount: 0.05,
           from: 'random'
