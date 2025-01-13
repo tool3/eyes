@@ -20,17 +20,14 @@ export default function Loader() {
 
   useLayoutEffect(() => {
     if (progress === 100) {
-      tl.to(`.${s.loading}`, {
-        opacity: 0
-      })
+      // tl.to(`.${s.loading}`, {
+      //   opacity: 0
+      // })
       tl.to(`.${s.letter}`, {
         duration: 1,
         ease: 'power1.out',
-        stagger: {
-          amount: 0.05,
-          from: 'random'
-        },
-        y: -500
+        stagger: 0.03,
+        y: '-100vh'
       })
       tl.to(`.${s.overlay}`, {
         duration: 0,
@@ -40,6 +37,8 @@ export default function Loader() {
     }
   }, [progress, tl])
 
+  const percentage = progress.toFixed(0).split('')
+
   return (
     <Html
       style={style}
@@ -47,7 +46,7 @@ export default function Loader() {
       className={clsx(s.overlay, progress === 100 ? s.loaded : '')}
     >
       <div className={s.title}>
-        <div className={s.letters}>
+        {/* <div className={s.letters}>
           <div className={s.letter}>F</div>
           <div className={s.letter}>O</div>
           <div className={s.letter}>L</div>
@@ -57,8 +56,14 @@ export default function Loader() {
           <div className={s.letter}>A</div>
           <div className={s.letter}>L</div>
           <div className={s.letter}>L</div>
+        </div> */}
+        <div className={s.loading}>
+          <div className={s.letters}>
+            <div className={s.letter}>{percentage[0]}</div>
+            <div className={s.letter}>{percentage[1]}</div>
+            <div className={s.letter}>{percentage[2]}</div>
+          </div>
         </div>
-        <div className={s.loading}>{progress.toFixed(2)} % loaded</div>
       </div>
     </Html>
   )

@@ -1,54 +1,53 @@
 .overlay {
-    position: absolute;
+  position: absolute;
+  gap: 5px;
+  top: 0;
+  margin: 10px;
+  padding: 0.5rem 1rem;
+  font-family: GeistMono, monospace;
+  font-size: 11px;
+  backdrop-filter: blur(10px);
+  cursor: grab;
+  border-radius: 10px;
+  box-shadow: none;
+  user-select: none;
+  transition: opacity 0.2s ease-in-out;
+  will-change: opacity, visibility;
+
+  .desktopWrapper {
+    display: flex;
+    flex-direction: column;
     gap: 5px;
-    top: 0;
-    margin: 10px;
-    padding: .5rem 1rem;
-    font-family: 'GeistMono';
-    font-size: 11px;
-    backdrop-filter: blur(10px);
-    cursor: grab;
 
-    border-radius: 10px;
-    box-shadow:  none;
-    user-select: none;
-    transition: opacity .2s ease-in-out;
-    will-change: opacity, visibility;
+    .desktop {
+      display: flex;
+      align-items: center;
+      gap: 5px;
 
-    .desktopWrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-
-        .desktop {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-    
-            kbd {
-                padding: 2px 5px;
-                border-radius: 4px;
-                background: #e0cdcd;
-                background: var(--button-background);
-                box-shadow: var(--button-box-shadow)
-            }
-        }
+      kbd {
+        padding: 2px 5px;
+        border-radius: 4px;
+        background: #e0cdcd;
+        background: var(--button-background);
+        box-shadow: var(--button-box-shadow);
+      }
     }
-
-
+  }
 }
 
 .dragging {
-    cursor: grabbing;
+  cursor: grabbing;
 }
 
 .hidden {
-    visibility: hidden;
-    opacity: 0;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .visible {
-    visibility: visible;
-    opacity: 1;
-    box-shadow: inset 1px 1px 5px #393434, inset -1px -1px 5px #4d4646;
+  visibility: visible;
+  opacity: 1;
+  box-shadow:
+    inset 1px 1px 5px #393434,
+    inset -1px -1px 5px #4d4646;
 }

@@ -5,17 +5,18 @@
 @import './reset.css';
 
 @font-face {
-  font-family: 'DelaGothicOne';
-  src: url('../../public/fonts/Dela_Gothic_One/dela-gothic-one.woff2') format('woff2');
+  font-family: DelaGothicOne;
+  src: url('../../public/fonts/Dela_Gothic_One/dela-gothic-one.woff2')
+    format('woff2');
 }
 
 @font-face {
-  font-family: 'TechnoType';
+  font-family: TechnoType;
   src: url('../../public/fonts/Technotype34-Regular.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'GeistMono';
+  font-family: GeistMono;
   src: url('../../public/fonts/GeistMono-Regular.ttf') format('truetype');
 }
 
@@ -41,9 +42,8 @@
   --transition-slow: var(--duration) cubic-bezier(0.25, 1, 0.5, 1);
 
   // Shadows
-  --button-background:  #585151;
-  --button-box-shadow:  inset -2px 2px 4px #383434,
-            inset 2px -2px 4px #786e6e;
+  --button-background: #585151;
+  --button-box-shadow: inset -2px 2px 4px #383434, inset 2px -2px 4px #786e6e;
 }
 
 html {
