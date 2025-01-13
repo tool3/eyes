@@ -25,11 +25,18 @@ export default function Loader() {
       })
       tl.to(`.${s.letter}`, {
         duration: 1,
-        ease: 'power3.out',
-        stagger: 0.03,
+        ease: 'sine.out',
+        stagger: {
+          amount: 0.05,
+          from: 'random'
+        },
         y: -500
       })
-      tl.to(`.${s.overlay}`, { duration: 0, opacity: 0, display: 'none' })
+      tl.to(`.${s.overlay}`, {
+        duration: 0,
+        opacity: 0,
+        display: 'none'
+      })
     }
   }, [progress, tl])
 
