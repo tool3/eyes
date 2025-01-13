@@ -12,8 +12,8 @@
     backdrop-filter: blur(10px);
     font-family: GeistMono;
     font-size: 11px;
-    transition: .2s ease-in-out;
-    will-change: opacity, visibility;
+    transition: opacity .2s ease-in-out;
+    will-change: opacity;
     cursor: grab;
     box-shadow:  none;
     border-radius: 15px;
@@ -22,7 +22,7 @@
 
 .open {
     visibility: visible;
-    box-shadow: 5px 5px 10px #393434, -3px -3px 10px #4d4646;
+    box-shadow: inset 1px 1px 5px #393434, inset -1px -1px 5px #4d4646;
     opacity: 1;
 }
 
