@@ -7,7 +7,6 @@ import { Suspense, useState } from 'react'
 
 import Debug from '../debug/debug'
 import Loader from '../loader/loader'
-import s from './canvas.module.scss'
 
 function FPS({ fps }: { fps: boolean }) {
   return fps ? <Stats className="stats" /> : null
