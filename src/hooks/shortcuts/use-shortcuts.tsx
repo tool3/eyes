@@ -52,8 +52,8 @@ export default function useShortCuts() {
     const shortcuts = [
       { key: 'i', description: 'increase intensity' },
       { key: 'j', description: 'decrease intensity' },
-      { key: 'y', description: 'increase distance' },
-      { key: 'g', description: 'decrease distance' },
+      { key: 'g', description: 'increase distance' },
+      { key: 'v', description: 'decrease distance' },
       { key: 'x', description: 'lock axis x' },
       { key: 'y', description: 'lock axis y' },
       { key: 'm', description: 'cycle models' },
