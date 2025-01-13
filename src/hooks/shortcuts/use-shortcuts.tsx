@@ -28,8 +28,6 @@ export default function useShortCuts() {
 
   const [open, setOpen] = useState(false)
 
-  // LOCKED MODE AND THATS IT
-
   function keyDown(e: KeyboardEvent) {
     if (e.code === 'KeyI' && e.altKey) incIntensity(5)
     if (e.code === 'KeyJ' && e.altKey) decIntensity(5)
