@@ -20,9 +20,9 @@ export default function Loader() {
 
   useLayoutEffect(() => {
     if (progress === 100) {
-      // tl.to(`.${s.loading}`, {
-      //   opacity: 0
-      // })
+      tl.to(`.${s.name}`, {
+        opacity: 0
+      })
       tl.to(`.${s.letter}`, {
         duration: 1,
         ease: 'power1.out',
@@ -46,17 +46,7 @@ export default function Loader() {
       className={clsx(s.overlay, progress === 100 ? s.loaded : '')}
     >
       <div className={s.title}>
-        {/* <div className={s.letters}>
-          <div className={s.letter}>F</div>
-          <div className={s.letter}>O</div>
-          <div className={s.letter}>L</div>
-          <div className={s.letter}>L</div>
-          <div className={s.letter}>O</div>
-          <div className={s.letter}>W</div>
-          <div className={s.letter}>A</div>
-          <div className={s.letter}>L</div>
-          <div className={s.letter}>L</div>
-        </div> */}
+        <div className={s.name}>FOLLOWALL</div>
         <div className={s.loading}>
           <div className={s.letters}>
             <div className={s.letter}>{percentage[0]}</div>

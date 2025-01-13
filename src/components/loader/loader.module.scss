@@ -15,6 +15,10 @@
   left: 10px;
   bottom: 0;
 
+  .name {
+    opacity: 1;
+  }
+
   .loading {
     font-size: 10rem;
 
@@ -28,6 +32,6 @@
   }
 
   @media screen and (width <= 800px) {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
