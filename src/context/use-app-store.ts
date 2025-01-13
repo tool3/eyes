@@ -22,7 +22,7 @@ export interface AppStore {
   decDistance: (distance: number) => void
   setDistance: (distance: number) => void
   setHint: () => void
-  lockAxis: (axis: string) => void
+  lockAxis: (axis: string, checkInternal?: boolean) => void
 }
 
 export const useAppStore = create<AppStore>((set) => ({
@@ -62,5 +62,9 @@ export const useAppStore = create<AppStore>((set) => ({
     set((s) => ({ distance: s.distance - distance })),
   setDistance: (distance: number) => set(() => ({ distance })),
   setHint: () => set((s) => ({ hint: !s.hint })),
-  lockAxis: (axis: string) => set((s) => ({ axisLock: s.axisLock === axis ? 'none' : axis }))
+  lockAxis: (axis: string, checkInternal = true) => {
+    set((s) => ({
+      axisLock: checkInternal ? (s.axisLock === axis ? 'none' : axis) : axis
+    }))
+  }
 }))

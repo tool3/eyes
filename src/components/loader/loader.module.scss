@@ -8,7 +8,14 @@
 }
 
 .loaded {
-    opacity: 0;
+    // opacity: 0;
+}
+
+.letters {
+    display: flex;
+    .letter{
+        display: block;
+    }
 }
 
 .title {

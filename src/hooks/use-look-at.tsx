@@ -4,16 +4,23 @@ import { useControls } from 'leva'
 import { useAppStore } from '~/context/use-app-store'
 
 export default function useLookAt(ref: any) {
-  const { axisLock, lockAxis, depth } = useAppStore()
+  const { axisLock, lockAxis, depth } = useAppStore((s) => ({
+    axisLock: s.axisLock,
+    lockAxis: s.lockAxis,
+    depth: s.depth
+  }))
+
   useControls({
-    locked: {
+    axisLock: {
       value: 'none',
       options: {
         none: 'none',
         x: 'x',
         y: 'y'
       },
-      onChange: lockAxis
+      onChange: (val) => {
+        lockAxis(val, false)
+      }
     }
   })
 

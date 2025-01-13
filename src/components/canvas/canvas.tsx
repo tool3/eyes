@@ -1,39 +1,12 @@
 /* eslint-disable react/no-unknown-property */
-import { Html, OrbitControls, Stats, useProgress } from '@react-three/drei'
+import { OrbitControls, Stats } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import clsx from 'clsx'
 import { Leva, useControls } from 'leva'
 import { Perf } from 'r3f-perf'
 import { Suspense, useState } from 'react'
 
 import Debug from '../debug/debug'
-import s from './canvas.module.scss'
-
-function Loader() {
-  const { progress } = useProgress()
-
-  const style = {
-    width: '100vw',
-    height: '100vh',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center'
-  } as any
-
-  return (
-    <Html
-      style={style}
-      center
-      className={clsx(s.overlay, progress === 100 && s.loaded)}
-    >
-      <div className={s.title}>
-        FOLLOWALL
-        <div className={s.loading}>{progress.toFixed(2)} % loaded</div>
-      </div>
-    </Html>
-  )
-}
+import Loader from '../loader/loader'
 
 function FPS({ fps }: { fps: boolean }) {
   return fps ? <Stats className="stats" /> : null
@@ -72,7 +45,8 @@ export default function CanvasWrapper({ children }) {
       >
         <color attach="background" args={[background]} />
         {perf ? <Perf position="top-left" /> : null}
-        <Suspense fallback={<Loader />}>{children}</Suspense>
+        <Suspense fallback={null}>{children}</Suspense>
+        <Loader />
         <OrbitControls enabled={false} />
       </Canvas>
     </>

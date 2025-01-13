@@ -16,7 +16,15 @@ export default function useShortCuts() {
     cycleModel,
     lockAxis,
     setHint
-  } = useAppStore()
+  } = useAppStore((s) => ({
+    incIntensity: s.incIntensity,
+    decIntensity: s.decIntensity,
+    incDistance: s.incDistance,
+    decDistance: s.decDistance,
+    cycleModel: s.cycleModel,
+    lockAxis: s.lockAxis,
+    setHint: s.setHint
+  }))
 
   const [open, setOpen] = useState(false)
 
